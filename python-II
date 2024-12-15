@@ -1,0 +1,63 @@
+#Homework 1
+numbers=[4,5,10,20,40,60,80]
+new_list=[]
+for number in numbers:
+  if(number>10):
+    new_list.append(number)
+print(new_list)
+
+#Homework 2
+def luas_lingkaran(r):
+  print(3.14 * r * r)
+
+#Homework 3
+def number(a,b):
+  print(a+b)
+  print(a*b)
+  print(max(a,b))
+
+#Simulasi Pesanan Kasir
+menus = [
+    {'nama': 'Nasi Pecel', 'harga': 10000},
+    {'nama': 'Nasi Kuning', 'harga': 12000},
+    {'nama': 'Nasi Uduk', 'harga': 15000}
+]
+
+nama = input("Masukkan nama pelanggan: ")
+
+menu_dipesan = []
+nama_menu_all = []
+
+for menu in menus:
+  nama_menu_all.append(menu["nama"])
+
+while True:
+  pesanan = input("Masukkan pesanan di sini: ")
+  if pesanan in nama_menu_all:
+    menu_dipesan.append(pesanan)
+  else:
+    print("Maaf pesanan tidak ditemukan")
+
+print("Apakah sudah selesai?")
+  done = input()
+
+  if done == "Ya":
+    break
+
+print(menu_dipesan)
+
+total_harga = 0
+jumlah_item = len(menu_dipesan)
+
+print(f"\n--- Struk Pembayaran ---")
+print(f"Nama Pelanggan: {nama}")
+print("Pesanan:")
+
+for pesanan in menu_dipesan:
+    for menu in menus:
+        if pesanan == menu['nama']:
+            print(f"- {pesanan}: Rp {menu['harga']}")
+            total_harga += menu['harga']
+
+print(f"\nJumlah Item: {jumlah_item}")
+print(f"Total Harga: Rp {total_harga}")
